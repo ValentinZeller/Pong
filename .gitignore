@@ -1,0 +1,6 @@
+#Fichier de configuration des fichiers à ignorer
+*.exe
+*.o
+*.err
+*.out
+*.ppu
