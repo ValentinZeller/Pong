@@ -45,8 +45,10 @@ function addVect(vect1,vect2 : Vect2D):Vect2D;
 //SORTIE : 1 vecteur 2D
 var vectemp : Vect2D;
 begin
-  vectemp.posX := vect1.posX + vect2.posX;
-  vectemp.posY := vect1.posY + vect2.posY;
+  setVectPosX(vectemp,getVectPosX(vect1)+getVectPosY(vect2));
+  setVectPosY(vectemp,getVectPosY(vect1)+getVectPosY(vect2));
+  //vectemp.posX := vect1.posX + vect2.posX;
+  //vectemp.posY := vect1.posY + vect2.posY;
   addVect := vectemp;
 end;
 
@@ -56,8 +58,10 @@ function sousVect(vect1,vect2 : Vect2D):Vect2D;
 //SORTIE : 1 vecteur 2D
 var vectemp : Vect2D;
 begin
-  vectemp.posX := vect1.posX - vect2.posX;
-  vectemp.posY := vect1.posY - vect2.posY;
+  setVectPosX(vectemp,getVectPosX(vect1)-getVectPosY(vect2));
+  setVectPosY(vectemp,getVectPosY(vect1)-getVectPosY(vect2));
+  //vectemp.posX := vect1.posX - vect2.posX;
+  //vectemp.posY := vect1.posY - vect2.posY;
   sousVect := vectemp;
 end;
 
@@ -67,8 +71,10 @@ function scalVect(vect1 : Vect2D;scal : integer):Vect2D;
 //SORTIE : 1 vecteur 2D
 var vectemp : Vect2D;
 begin
-  vectemp.posX := vect1.posX * scal;
-  vectemp.posY := vect1.posY * scal;
+  setVectPosX(vectemp,getVectPosX(vect1)*scal);
+  setVectPosY(vectemp,getVectPosY(vect1)*scal);
+  //vectemp.posX := vect1.posX * scal;
+  //vectemp.posY := vect1.posY * scal;
   scalVect := vectemp;
 end;
 
