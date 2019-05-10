@@ -47,8 +47,6 @@ var vectemp : Vect2D;
 begin
   setVectPosX(vectemp,getVectPosX(vect1)+getVectPosY(vect2));
   setVectPosY(vectemp,getVectPosY(vect1)+getVectPosY(vect2));
-  //vectemp.posX := vect1.posX + vect2.posX;
-  //vectemp.posY := vect1.posY + vect2.posY;
   addVect := vectemp;
 end;
 
@@ -60,8 +58,6 @@ var vectemp : Vect2D;
 begin
   setVectPosX(vectemp,getVectPosX(vect1)-getVectPosY(vect2));
   setVectPosY(vectemp,getVectPosY(vect1)-getVectPosY(vect2));
-  //vectemp.posX := vect1.posX - vect2.posX;
-  //vectemp.posY := vect1.posY - vect2.posY;
   sousVect := vectemp;
 end;
 
@@ -73,8 +69,6 @@ var vectemp : Vect2D;
 begin
   setVectPosX(vectemp,getVectPosX(vect1)*scal);
   setVectPosY(vectemp,getVectPosY(vect1)*scal);
-  //vectemp.posX := vect1.posX * scal;
-  //vectemp.posY := vect1.posY * scal;
   scalVect := vectemp;
 end;
 
@@ -83,15 +77,18 @@ function prodScalVect(vect1,vect2 : Vect2D):integer;
 //ENTREE : 2 vecteurs 2D
 //SORTIE : 1 vecteur 2D
 begin
-  prodScalVect := vect1.posX*vect2.posX+vect1.posY*vect2.posY;
+  prodScalVect := getVectPosX(vect1)*getVectPosX(vect2)+getVectPosY(vect1)*getVectPosY(vect2);
 end;
 
-function prodVect(vect1,vect2 : Vect2D): integer;
+function prodVect(vect1,vect2 : Vect2D): Vect2D;
 //BUT : Produit vectoriel de deux vecteurs donnant le déterminant
 //ENTREE : 2 vecteurs 2D
 //SORTIE : 1 nombre
+var vectemp : Vect2D;
 begin
-  prodVect := vect1.posX * vect2.posY + vect1.posY * vect2.posX;
+  vectemp.setVectPosX(getVectPosY(vect1)-getVectPosY(vect2));
+  vectemp.setVectPosY(getVectPosY(vect2)-getVectPosY(vect1));
+  prodVect := vectemp;
 end;
 
 end.
