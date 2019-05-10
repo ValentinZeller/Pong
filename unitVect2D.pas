@@ -15,7 +15,7 @@ function addVect(vect1,vect2 : Vect2D):Vect2D;
 function sousVect(vect1,vect2 : Vect2D):Vect2D;
 function scalVect(vect1 : Vect2D;scal : integer):Vect2D;
 function prodScalVect(vect1,vect2 : Vect2D):integer;
-function prodVect(vect1,vect2 : Vect2D):integer;
+function prodVect(vect1,vect2 : Vect2D): Vect2D;
 
 implementation
 
@@ -86,8 +86,8 @@ function prodVect(vect1,vect2 : Vect2D): Vect2D;
 //SORTIE : 1 nombre
 var vectemp : Vect2D;
 begin
-  vectemp.setVectPosX(getVectPosY(vect1)-getVectPosY(vect2));
-  vectemp.setVectPosY(getVectPosY(vect2)-getVectPosY(vect1));
+  setVectPosX(vectemp,getVectPosY(vect1)-getVectPosY(vect2));
+  setVectPosY(vectemp,getVectPosX(vect2)-getVectPosX(vect1));
   prodVect := vectemp;
 end;
 

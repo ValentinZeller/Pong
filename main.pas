@@ -49,6 +49,6 @@ begin
   writeln('Scalaire : Position X : ',getVectPosX(scalVect(vec1,2)));
   writeln('Scalaire : Position Y : ',getVectPosY(scalVect(vec1,2)));
   writeln('Produit scalaire entre 2 vecteurs : ',prodScalVect(vec1,vec2));
-  writeln('Produit vectoriel : X : ',getVectPosX(prodVect(vec1,vec2)),' Y : ',getVectPosY(prodVect(vect1,vect2)));
+  writeln('Produit vectoriel : X : ',getVectPosX(prodVect(vec1,vec2)),' Y : ',getVectPosY(prodVect(vec1,vec2)));
   readln;
 end.
